@@ -1,27 +1,20 @@
-function changeColor(){
-document.getElementById("text").style.color="red";
+//クリックされたら動作する
+
+function errorInput(){
+    console.log(document.getElementById("month").value)
+    console.log(document.getElementById("day").value)
+
+    const month = document.getElementById("month").value;
+    const day = document.getElementById("day").value;
+
+    console.log("month:",month,"day:",day)
 }
 
+//document.getElementById("month")はタグを確認するだけ
+//valueはそのタグの値を示す
 
-
-//document.getElementById("text").style.color="red";
-/*これは、ドキュメントの中の「text」というIDを持っているタグのスタイルの色を赤にしてください。*/
-let count = 0;
-//document.querySelector("h1").style.color="red";
-function increaseCount(){
-
-    count++;
-    document.getElementById("counter").innerText=count;
-    if(count>4){
-        count=0;
-    }
-
-}
-
-function herasukaunto(){
-    count--;
-    document.getElementById("counter").innerText=count;
-    if(count<-4){
-        count=1;
-    }
-}  
+/*javascriptのプログラムとHTMlファイルはどこで対応しているか
+タグについているIDで紐づく
+タグの中にある負荷情報のことを属性という
+console.log()はc言語でいうところのprintf();です
+*/
