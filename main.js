@@ -15,7 +15,7 @@ gameSelector.addEventListener("change",function(){
         case "number-guess":
             NumberGuessGame();
             break
-        case "rps":
+        case "RPS":
             RPS();
             break;
     }
