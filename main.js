@@ -9,15 +9,33 @@ function ClickCounterGame/*関数名*/(){
     button1.textContent = "+1ボタン";
     //<button>中身の文字をtextContntという</button>
 
+    let button2 = document.createElement("button");
+    button2.textContent = "+10ボタン";
+
+    let button3 = document.createElement("button");
+    button3.textContent = "リセットボタン";
+
     let counter = document.createElement("p");
     counter.textContent = count;
 
     button1.addEventListener("click",function(){//クリックというイベントを読み取る　２
-        count++;
+        if(count<100){count++;}
         counter.textContent = count;
         //イベントが起きた場合の処理を記述 ３
     })
+
+    button2.addEventListener("click",function(){
+        if(count<100){count=count+10;}
+        counter.textContent = count;
+    })
+
+    button3.addEventListener("click",function(){
+        count=0
+        counter.textContent = count;
+    })
     gameContainer.appendChild(button1);//ボタンを表示する　４
+    gameContainer.appendChild(button2);
+    gameContainer.appendChild(button3);
     gameContainer.appendChild(counter);
 }
 ClickCounterGame();
