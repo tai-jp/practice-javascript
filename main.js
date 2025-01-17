@@ -25,7 +25,7 @@ function ClickCounterGame/*関数名*/(){
     })
 
     button2.addEventListener("click",function(){
-        if(count<100){count=count+10;}
+        if(count<= 90){count=count+10;}
         counter.textContent = count;
     })
 
@@ -39,3 +39,16 @@ function ClickCounterGame/*関数名*/(){
     gameContainer.appendChild(counter);
 }
 ClickCounterGame();
+
+function startNumberGuessGame(){
+    const gameContainer = document.getElementById("game-container");
+    const randomNumber = Math.floor(Math.random() * 100) +1;
+    let message = document.createElement('p');
+    message.textContent = randomNumber
+    let input = document.createElement('input');
+    input.type = 'number';
+    input.placeholder = '好きな数字を入力してください(1-100)'
+    gameContainer.appendChild(message);
+    gameContainer.appendChild(input);
+}
+startNumberGuessGame();
