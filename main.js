@@ -75,5 +75,31 @@ function startNumberGuessGame(){
     gameContainer.appendChild(button);
     gameContainer.appendChild(p);
     gameContainer.appendChild(counter);
+
+    const countDisplay = document.createElement("p")
+    countDisplay.addEventListener("click",function(){
+        count++
+        countDisplay.textContent = `試行回数: ${count}`  //バッククォート　＠マーク
+    })
+    gameContainer.appendChild(countDisplay)
+    let button1 = document.createElement("button")
+    let button2 = document.createElement("button")
+    let button3 = document.createElement("button")
+    let button4 = document.createElement("button")
+    let button5 = document.createElement("button")
+    let button6 = document.createElement("button")
+    let button7 = document.createElement("button")
+    let button8 = document.createElement("button")
+    let button9 = document.createElement("button")
+
+    button1.textContent =""
+    button2.textContent =""
+    button3.textContent =""
+    button4.textContent =""
+    button5.textContent =""
+    button6.textContent =""
+    button7.textContent =""
+    button8.textContent =""
+    button9.textContent =""
 }
 startNumberGuessGame();
