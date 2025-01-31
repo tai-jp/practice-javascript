@@ -1,44 +1,58 @@
-// function ClickCounterGame/*関数名*/(){
-//     let count = 0; //countという変数を用意して、0を代入する
+const gameSelector = document.getElementById("game-select");
+const gameContainer = document.getElementById("game-container");
+gameSelector = document.addEventListener("change",function(){
+    gameContainer.innerHTML = '';
+    switch (gameSelector.value) {
+        case 'number-guess':
+            startNumberGuessGame();
+            break;
+        case 'clicker':
+            ClickCounterGame();
+            break;
+    }
+})
 
-//     const gameContainer = document.getElementById("game-container");
-//     // const は定数 変更不可　htmlの特定のidのタグを探し、定数に代入する。
+function ClickCounterGame/*関数名*/(){
+    let count = 0; //countという変数を用意して、0を代入する
 
-//     let button1 = document.createElement("button");
-//     //ボタンのタグを作成する<button>ボタン</button>を作り、変数と紐づける　１
-//     button1.textContent = "+1ボタン";
-//     //<button>中身の文字をtextContntという</button>
+    const gameContainer = document.getElementById("game-container");
+    // const は定数 変更不可　htmlの特定のidのタグを探し、定数に代入する。
 
-//     let button2 = document.createElement("button");
-//     button2.textContent = "+10ボタン";
+    let button1 = document.createElement("button");
+    //ボタンのタグを作成する<button>ボタン</button>を作り、変数と紐づける　１
+    button1.textContent = "+1ボタン";
+    //<button>中身の文字をtextContntという</button>
 
-//     let button3 = document.createElement("button");
-//     button3.textContent = "リセットボタン";
+    let button2 = document.createElement("button");
+    button2.textContent = "+10ボタン";
 
-//     let counter = document.createElement("p");
-//     counter.textContent = count;
+    let button3 = document.createElement("button");
+    button3.textContent = "リセットボタン";
 
-//     button1.addEventListener("click",function(){//クリックというイベントを読み取る　２
-//         if(count<100){count++;}
-//         counter.textContent = count;
-//         //イベントが起きた場合の処理を記述 ３
-//     })
+    let counter = document.createElement("p");
+    counter.textContent = count;
 
-//     button2.addEventListener("click",function(){
-//         if(count<= 90){count=count+10;}
-//         counter.textContent = count;
-//     })
+    button1.addEventListener("click",function(){//クリックというイベントを読み取る　２
+        if(count<100){count++;}
+        counter.textContent = count;
+        //イベントが起きた場合の処理を記述 ３
+    })
 
-//     button3.addEventListener("click",function(){
-//         count=0
-//         counter.textContent = count;
-//     })
-//     gameContainer.appendChild(button1);//ボタンを表示する　４
-//     gameContainer.appendChild(button2);
-//     gameContainer.appendChild(button3);
-//     gameContainer.appendChild(counter);
-// }
-// ClickCounterGame();
+    button2.addEventListener("click",function(){
+        if(count<= 90){count=count+10;}
+        counter.textContent = count;
+    })
+
+    button3.addEventListener("click",function(){
+        count=0
+        counter.textContent = count;
+    })
+    gameContainer.appendChild(button1);//ボタンを表示する　４
+    gameContainer.appendChild(button2);
+    gameContainer.appendChild(button3);
+    gameContainer.appendChild(counter);
+}
+
 
 function startNumberGuessGame(){
     let count=0
@@ -58,8 +72,8 @@ function startNumberGuessGame(){
     let button = document.createElement("button")
     button.textContent = "確認"
     button.addEventListener("click",function(){
-        count++;
-        counter.textContent = count;
+        // count++;
+        // counter.textContent = count;
         const val = parseInt(input.value);
         if(randomNumber == val){
             p.textContent = "正解"
@@ -77,29 +91,12 @@ function startNumberGuessGame(){
     gameContainer.appendChild(counter);
 
     const countDisplay = document.createElement("p")
-    countDisplay.addEventListener("click",function(){
+    button.addEventListener("click",function(){
         count++
         countDisplay.textContent = `試行回数: ${count}`  //バッククォート　＠マーク
     })
     gameContainer.appendChild(countDisplay)
-    let button1 = document.createElement("button")
-    let button2 = document.createElement("button")
-    let button3 = document.createElement("button")
-    let button4 = document.createElement("button")
-    let button5 = document.createElement("button")
-    let button6 = document.createElement("button")
-    let button7 = document.createElement("button")
-    let button8 = document.createElement("button")
-    let button9 = document.createElement("button")
 
-    button1.textContent =""
-    button2.textContent =""
-    button3.textContent =""
-    button4.textContent =""
-    button5.textContent =""
-    button6.textContent =""
-    button7.textContent =""
-    button8.textContent =""
-    button9.textContent =""
+    
 }
-startNumberGuessGame();
+
